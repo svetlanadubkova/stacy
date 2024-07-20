@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>rockaways coworking</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+--primary-color: #00A0B0;
+--secondary-color: #ffffff;
+--accent-color: #F9BC60;
+--text-color: #333333;
+--background-color: #F2F7F7;
+--scroll-bg-color: #FFFFFF;
+--title-bg-color: #0a0a0a;
+--title-text-color: #00A0B0;
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: 'Roboto', sans-serif;
+background-color: var(--background-color);
+color: var(--text-color);
+line-height: 1.6;
+font-size: 16px;
+text-transform: lowercase;
+}
+
+.container {
+padding: 0 20px;
+}
+
+h1 {
+font-size: 3rem;
+font-weight: 700;
+}
+
+h2 {
+font-size: 1.5rem;
+}
+
+h3 {
+font-weight:700;
+}
+
+.section-title {
+font-size: 2.5rem;
+}
+
+.grid, .mission-events-grid {
+grid-template-columns: 1fr;
+}
+
+.sticky-header {
+font-size: 0.8rem;
+}
+
+.sticky-header .container {
+flex-direction: column;
+align-items: center;
+}
+
+.parallax-section {
+background-attachment: scroll;
+}
+
+.scroll-container {
+overflow: hidden;
+white-space: nowrap;
+}
+
+.scroll-text {
+display: inline-block;
+padding-left: 100%;
+animation: scroll 30s linear infinite;
+}
+
+@keyframes scroll {
+0% { transform: translate(0, 0); }
+100% { transform: translate(-100%, 0); }
+}
+
+.scroll-text-1, .scroll-text-2 {
+display: inline-block;
+}
+
+@media screen and (min-width: 768px) {
+body {
+font-size: 18px;
+}
+
+.container {
+padding: 0 40px;
+}
+
+h1 {
+font-size: 6rem;
+}
+
+h2 {
+font-size: 2rem;
+}
+
+.section-title {
+font-size: 3.5rem;
+}
+
+.grid, .mission-events-grid {
+grid-template-columns: 1fr 1fr;
+}
+
+.sticky-header .container {
+flex-direction: row;
+justify-content: space-between;
+}
+
+.parallax-section {
+background-attachment: fixed;
+}
+}
+
+@media screen and (min-width: 1024px) {
+h1 {
+font-size: 10rem;
+}
+
+.section-title {
+font-size: 4.5rem;
+}
+}
+
+.emoji {
+height: 1em;
+width: 1em;
+vertical-align: middle;
+margin: 0 0.2em;
+max-width: 16px;
+max-height: 16px;
+}
+
+.container {
+width: 100%;
+max-width: 100%;
+margin: 0 auto;
+padding: 0 40px;
+}
+
+header {
+background: var(--secondary-color) !important;
+color: var(--primary-color);
+padding: 20rem 0;
+position: relative;
+overflow: hidden;
+opacity: 1;
+transition: opacity 0.3s ease;
+}
+
+h1 {
+font-size: 10rem;
+margin-bottom: 1rem;
+text-align: left;
+animation: slideInLeft 1s ease-out, fadeIn 2s ease-out;
+}
+
+h2 {
+font-size: 2rem;
+font-weight: 400;
+text-align: left;
+animation: slideInRight 1s ease-out, fadeIn 2s ease-out;
+text-decoration: underline;
+}
+
+@keyframes slideInLeft {
+from { transform: translateX(-100%); opacity: 0; }
+to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInRight {
+from { transform: translateX(100%); opacity: 0; }
+to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+from { opacity: 0; }
+to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+from { opacity: 1; }
+to { opacity: 0; }
+}
+
+@keyframes letterByLetter {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+
+section {
+padding: 3rem 0;
+transition: background-color 0.3s ease, opacity 0.5s ease;
+opacity: 1;
+}
+
+.section-title {
+font-size: 4.5rem;
+margin-bottom: 2rem;
+color: var(--primary-color);
+text-align: left;
+position: relative;
+display: inline-block;
+animation: fadeIn 2s ease-out;
+}
+
+.section-title::after {
+content: '';
+position: absolute;
+bottom: -5px;
+left: 0;
+width: 0;
+height: 3px;
+background-color: var(--accent-color);
+transition: width 0.3s ease;
+}
+
+.section-title:hover::after {
+width: 100%;
+}
+
+.scroll-container {
+overflow: hidden;
+white-space: nowrap;
+background-color: var(--scroll-bg-color);
+padding: 0.5rem 0;
+margin: 0;
+}
+
+.scroll-text {
+display: inline-block;
+padding-left: 100%;
+animation: scroll 30s linear infinite;
+font-size: 1.2rem;
+}
+
+.scroll-text-1 { color: var(--primary-color); }
+.scroll-text-2 { color: var(--accent-color); }
+
+.checklist {
+list-style-type: none;
+padding-left: 2rem;
+}
+
+.checklist li {
+position: relative;
+padding-left: 1.5rem;
+margin-bottom: 1rem;
+text-align: left;
+transition: transform 0.3s ease;
+font-size: 1.2rem;
+animation: fadeIn 2s ease-out;
+}
+
+.checklist li:hover {
+transform: translateX(10px);
+}
+
+.checklist li::before {
+content: '🏖️';
+position: absolute;
+left: 0;
+color: var(--primary-color);
+}
+
+#events {
+background-color: var(--secondary-color);
+color: var(--background-color);
+}
+
+#events .section-title {
+color: var(--background-color);
+}
+
+.events-list {
+list-style-type: none;
+}
+
+.events-list li {
+margin-bottom: 1rem;
+text-align: left;
+font-size: 1rem;
+animation: fadeIn 2s ease-out;
+}
+
+.events-list a {
+color: var(--accent-color);
+text-decoration: underline;
+font-weight: 560;
+transition: color 0.3s ease;
+}
+
+.events-list a:hover {
+color: var(--background-color);
+}
+
+#signup {
+background-color: var(--secondary-color);
+padding: 2rem 0;
+}
+
+.signup-container {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+
+form {
+display: flex;
+flex-direction: column;
+max-width: 400px;
+width: 100%;
+}
+
+input[type="email"] {
+padding: 1rem;
+margin-bottom: 1rem;
+border: none;
+border-radius: 5px;
+font-size: 1.2rem;
+}
+
+button {
+padding: 1rem;
+background-color: var(--primary-color);
+color: var(--background-color);
+border: none;
+border-radius: 5px;
+cursor: pointer;
+text-transform: lowercase;
+font-size: 1.2rem;
+transition: background-color 0.3s ease;
+}
+
+button:hover {
+background-color: var(--secondary-color);
+}
+
+.italic { font-style: italic; }
+.bold { font-weight: 700; }
+
+.grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 2rem;
+}
+
+.resources-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 2rem;
+}
+
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+a {
+color: var(--accent-color);
+text-decoration: underline;
+transition: color 0.3s ease;
+}
+
+a:hover {
+color: var(--primary-color);
+}
+
+.parallax-section {
+background-attachment: fixed;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+position: relative;
+overflow: hidden;
+}
+
+.parallax-content {
+position: relative;
+z-index: 2;
+}
+
+#parallax-header {
+min-height: 80vh;
+display: flex;
+align-items: center;
+justify-content: center;
+background-image: url('https://source.unsplash.com/random/1920x1080?beach,coworking');
+background-color: #0a0a0a;
+}
+
+#mission-events {
+background-color: var(--secondary-color);
+color: var(--accent-color);
+}
+
+.mission-events-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 2rem;
+}
+
+.fade-in {
+opacity: 0;
+transform: translateY(20px);
+transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-in.active {
+opacity: 1;
+transform: translateY(0);
+}
+
+.floating {
+animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+0% { transform: translate(0, 0px); }
+50% { transform: translate(0, 15px); }
+100% { transform: translate(0, -0px); }
+}
+
+.resources-item {
+background-color: #fff;
+padding: 2rem;
+border-radius: 10px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+transition: transform 0.3s ease;
+animation: fadeIn 2s ease-out;
+}
+
+.resources-item:hover {
+transform: translateY(-10px);
+}
+
+.resources-item h4 {
+color: var(--primary-color);
+margin-bottom: 1rem;
+}
+
+.sticky-header {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+background-color: var(--secondary-color);
+padding: 0.5rem 0;
+z-index: 1000;
+display: block;
+font-size: 0.8rem;
+}
+
+.sticky-header.visible {
+display: block;
+}
+
+.sticky-header .container {
+justify-content: flex-start;
+align-items: center;
+}
+
+.sticky-header a {
+text-decoration: none;
+background: linear-gradient(to right, #00A0B0, #F9BC60, #00A0B0);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+animation: rainbow 5s linear infinite;
+background-size: 200% 100%;
+}
+
+@keyframes rainbow {
+0% {
+background-position: 0% 50%;
+}
+100% {
+background-position: 200% 50%;
+}
+}
+
+@media screen and (max-width: 767px) {
+.sticky-header .emoji {
+height: 1em;
+width: 1em;
+max-width: none;
+max-height: none;
+}
+}
+</style>
+</head>
+<body>
+<div class="sticky-header">
+<div class="container">
+<a href="https://lu.ma/calendar/cal-RockawaysCoworking" target="_blank" rel="noopener noreferrer" class="luma-link">
+subscribe to our <img src="https://em-content.zobj.net/thumbs/240/apple/325/beach-with-umbrella_1f3d6-fe0f.png" alt="Beach Emoji" class="emoji">events calendar<img src="https://em-content.zobj.net/thumbs/240/apple/325/beach-with-umbrella_1f3d6-fe0f.png" alt="Beach Emoji" class="emoji"> on luma to stay up to date on summer fridays and other events at rockaways coworking
+</a>
+</div>
+</div>
+
+<header id="parallax-header" class="parallax-section">
+<div class="parallax-overlay"></div>
+<div class="container parallax-content">
+<h1 class="floating" style="color: #00A0B0; bold">rockaways coworking</h1>
+<h2 style="color: #F9BC60;"><u><i>where creativity meets the beach</i></u></h2>
+</div>
+</header>
+
+<main>
+<section id="about-us" class="fade-in">
+<div class="container">
+<h3 class="section-title">about us</h3>
+<ul class="checklist">
+<li>we're an intimate coworking space in the heart of the rockaways, designed for creatives and remote workers.</li>
+<li>our space blends productivity with the relaxed vibe of beach life, offering a unique work environment.</li>
+<li>we believe in the power of community and collaboration, fostering connections among our diverse members.</li>
+<li>our facilities are equipped with high-speed internet, comfortable workstations, and beach-inspired decor.</li>
+<li>we're more than just a workspace - we're a hub for inspiration, networking, and personal growth.</li>
+<li>our location allows for the perfect work-life balance, with the beach just steps away for post-work relaxation.</li>
+<li>we host regular events, workshops, and social gatherings to enrich our community experience.</li>
+<li>we understand the value of flexibility, offering various membership options to suit different needs.</li>
+</ul>
+</div>
+</section>
+
+<section id="values" class="fade-in">
+<div class="scroll-container">
+<div class="scroll-text">
+<span class="scroll-text-1">creativity</span> • <span class="scroll-text-2">community</span> • <span class="scroll-text-1">productivity</span> • <span class="scroll-text-2">work-life balance</span> • <span class="scroll-text-1">collaboration</span> • <span class="scroll-text-2">inspiration</span> • <span class="scroll-text-1">flexibility</span> • <span class="scroll-text-2">beach vibes</span> • <span class="scroll-text-1">networking</span> • <span class="scroll-text-2">growth</span> • <span class="scroll-text-1">relaxation</span> • <span class="scroll-text-2">innovation</span> • <span class="scroll-text-1">community-driven</span> • <span class="scroll-text-2">work-friendly</span>
+</div>
+</div>
+</section>
+
+<section id="about-you" class="fade-in">
+<div class="container">
+<h3 class="section-title">who we're for</h3>
+<ul class="checklist">
+<li>creative professionals looking for an inspiring workspace by the beach.</li>
+<li>remote workers seeking a change of scenery and a vibrant community.</li>
+<li>freelancers who want to escape the isolation of working from home.</li>
+<li>entrepreneurs and small business owners in need of a flexible office solution.</li>
+<li>digital nomads passing through the rockaways and need a productive space.</li>
+<li>local residents looking for a professional environment outside their homes.</li>
+<li>anyone who believes that work can be both productive and enjoyable.</li>
+<li class="bold">those who value community, creativity, and the beach lifestyle.</li>
+</ul>
+</div>
+</section>
+
+<section id="community-members" class="fade-in">
+<div class="scroll-container">
+<div class="scroll-text">
+<span class="scroll-text-1">writers</span> • <span class="scroll-text-2">designers</span> • <span class="scroll-text-1">developers</span> • <span class="scroll-text-2">photographers</span> • <span class="scroll-text-1">marketers</span> • <span class="scroll-text-2">consultants</span> • <span class="scroll-text-1">artists</span> • <span class="scroll-text-2">entrepreneurs</span> • <span class="scroll-text-1">remote workers</span> • <span class="scroll-text-2">freelancers</span> • <span class="scroll-text-1">digital nomads</span> • <span class="scroll-text-2">small business owners</span> • <span class="scroll-text-1">creatives of all kinds</span>
+</div>
+</div>
+</section>
+
+<section id="mission-events" class="fade-in">
+<div class="container">
+<div class="mission-events-grid">
+<div class="mission">
+<h3 class="section-title">our mission</h3>
+<p class="text-block text-left fade-in">at rockaways coworking, our mission is to create a unique workspace that harmoniously blends productivity with the laid-back beach lifestyle. we strive to foster a community of diverse professionals who inspire and support each other. our goal is to provide a space where work feels less like a chore and more like a fulfilling part of life, complemented by the natural beauty and relaxed atmosphere of the rockaways. we believe that by bringing together passionate individuals in an inspiring environment, we can cultivate creativity, encourage collaboration, and help our members achieve a healthy work-life balance.</p>
+</div>
+<div class="events">
+<h3 class="section-title">summer fridays</h3>
+<ul class="events-list">
+<li class="fade-in"><a href="https://lu.ma/rockawayscoworking-summerfridays" target="_blank" rel="noopener noreferrer">join us every friday for collaborative coworking, beach breaks, and community lunches</a></li>
+<li class="fade-in"><a href="https://lu.ma/calendar/cal-RockawaysCoworking" target="_blank" rel="noopener noreferrer">check our luma calendar for upcoming events and workshops</a></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<section id="amenities" class="fade-in">
+<div class="container">
+<h3 class="section-title">our amenities</h3>
+<div class="resources-grid">
+<div class="resources-item fade-in">
+<h4>workspace</h4>
+<ul class="events-list">
+<li>high-speed wi-fi</li>
+<li>ergonomic chairs and desks</li>
+<li>private phone booths</li>
+<li>meeting rooms</li>
+</ul>
+</div>
+<div class="resources-item fade-in">
+<h4>refreshments</h4>
+<ul class="events-list">
+<li>complimentary coffee and tea</li>
+<li>filtered water</li>
+<li>snack bar</li>
+</ul>
+</div>
+<div class="resources-item fade-in">
+<h4>extras</h4>
+<ul class="events-list">
+<li>printing and scanning services</li>
+<li>lockers for storage</li>
+<li>bike racks</li>
+</ul>
+</div>
+<div class="resources-item fade-in">
+<h4>community</h4>
+<ul class="events-list">
+<li>regular networking events</li>
+<li>skill-sharing workshops</li>
+<li>community message board</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<section id="signup" class="fade-in">
+<div class="container signup-container">
+<h3 class="section-title">join our community</h3>
+<a href="https://lu.ma/calendar/cal-RockawaysCoworking" target="_blank" rel="noopener noreferrer" class="luma-link">subscribe to our events calendar on luma to stay up to date on summer fridays and other events at rockaways coworking</a>
+</div>
+</section>
+</main>
+
+<script>
+// Sticky header
+window.addEventListener('scroll', function() {
+var stickyHeader = document.querySelector('.sticky-header');
+var scrollPosition = window.pageYOffset;
+
+if (scrollPosition > 300) {
+stickyHeader.classList.add('visible');
+} else {
+stickyHeader.classList.remove('visible');
+}
+});
+
+// Parallax effect
+window.addEventListener('scroll', function() {
+let scrollPosition = window.pageYOffset;
+document.querySelectorAll('.parallax-section').forEach(function(section) {
+let speed = 0.5;
+section.style.backgroundPositionY = (scrollPosition - section.offsetTop) * speed + 'px';
+});
+});
+
+// Fade-in effect
+function isElementInViewport(el) {
+let rect = el.getBoundingClientRect();
+return (
+rect.top >= 0 &&
+rect.left >= 0 &&
+rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+);
+}
+
+function handleScrollAnimation() {
+document.querySelectorAll('.fade-in').forEach(function(el) {
+if (isElementInViewport(el)) {
+el.classList.add('active');
+}
+});
+}
+
+window.addEventListener('load', handleScrollAnimation);
+window.addEventListener('scroll', handleScrollAnimation);
+
+// Fade away effect
+window.addEventListener('scroll', function() {
+let scrollPosition = window.pageYOffset;
+document.querySelectorAll('section').forEach(function(section) {
+let fadeStart = section.offsetTop - window.innerHeight;
+let fadeEnd = section.offsetTop + section.offsetHeight;
+if (scrollPosition > fadeStart && scrollPosition < fadeEnd) {
+section.style.opacity = 1;
+}
+});
+
+// Fade away effect for header only after scrolling past it
+let header = document.querySelector('header');
+let headerFadeStart = header.offsetTop + header.offsetHeight;
+if (scrollPosition > headerFadeStart) {
+let headerOpacity = 1 - (scrollPosition - headerFadeStart) / (headerFadeStart);
+header.style.opacity = headerOpacity;
+} else {
+header.style.opacity = 1;
+}
+});
+
+// Letter by letter animation
+document.querySelectorAll('.section-title, h1, h2').forEach(function(el) {
+let text = el.innerText;
+el.innerHTML = '';
+for (let i = 0; i < text.length; i++) {
+let span = document.createElement('span');
+span.innerText = text[i];
+span.style.animation = `letterByLetter 0.5s ease ${i * 0.1}s forwards`;
+el.appendChild(span);
+}
+});
+
+// Form submission
+document.querySelectorAll('.signup-form').forEach(function(form) {
+form.addEventListener('submit', function(e) {
+e.preventDefault();
+alert('thanks for signing up! we\'ll be in touch soon.');
+form.reset();
+});
+});
+</script>
+</body>
+</html>
